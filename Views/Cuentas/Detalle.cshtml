@@ -1,0 +1,16 @@
+﻿@model ReporteTransaccionesDetallada
+
+@{
+    ViewData["Title"] = "Movimientos de cuenta";
+}
+
+<div class="card">
+    <div class="card-header">
+        Detalle de las transacciones asociadas a la cuenta @ViewBag.Cuenta
+    </div>
+    <div class="card-body">
+
+       <partial name="_ReporteTransaccionesDetalladas" model="Model" />
+
+    </div>
+</div>

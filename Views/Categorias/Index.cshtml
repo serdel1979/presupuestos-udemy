@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Categoria>
+
+<div class="card">
+    <div class="card-header">
+        Listado de categorías
+    </div>
+
+    <div class="row">
+        <div class="col-2">
+            <div style="padding:20px;">
+                <a asp-action="Crear" class="btn btn-primary mb-3">Nuevo</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card-body">
+        <p class="card-text">Una categoría permite indicar en qué se gasta el dinero, y también de dónde provienen los ingresos.</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Tipo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="reordenable">
+
+                @foreach (var categoria in Model)
+                {
+                    <tr>
+                       <td>@categoria.Nombre</td>
+                        <td>@categoria.TipoOperacionId.ToString()</td>
+                       <td>
+                        <a asp-action="Editar" asp-route-id="@categoria.Id" class="btn btn-warning">Editar</a>
+                        <a asp-action="Eliminar" asp-route-id="@categoria.Id" class="btn btn-danger">Borrar</a>
+                       </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+</div>

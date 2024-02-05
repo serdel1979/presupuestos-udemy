@@ -1,0 +1,9 @@
+﻿@model DateTime
+
+<a asp-route-mes="@ViewBag.mesAnterior" asp-route-año="@ViewBag.añoAnterior"
+   class="btn btn-primary"><i class="bi-chevron-left"></i></a>
+
+@Model.ToString("MMM") @Model.Year
+
+<a asp-route-mes="@ViewBag.mesPosterior" asp-route-año="@ViewBag.añoPosterior"
+   class="btn btn-primary"><i class="bi-chevron-right"></i></a>
